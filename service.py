@@ -1,5 +1,8 @@
 import time
 import Adafruit_ADS1x15
+import pyautogui
+
+MOVE_DISTANCE = 5
 
 UP = 0
 DOWN = 2
@@ -28,4 +31,7 @@ while True:
     elif direction_values[3] > THRESHOLD:
         x_direction = 1
 
-    
+
+    pyautogui.drag(MOVE_DISTANCE * x_direction, MOVE_DISTANCE * y_direction, 0.05)
+
+    time.sleep(0.05)
