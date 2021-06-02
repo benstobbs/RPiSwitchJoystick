@@ -43,4 +43,4 @@ while True:
         x_increase = 0
 
 
-    pyautogui.drag(MOVE_DISTANCE * x_direction, MOVE_DISTANCE * y_direction, 0.05)
+    pyautogui.move(MOVE_DISTANCE * x_direction, MOVE_DISTANCE * y_direction, 0.05)
