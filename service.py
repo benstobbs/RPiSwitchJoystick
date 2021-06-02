@@ -21,26 +21,18 @@ while True:
 
     print(direction_values)
 
-    x_direction = 0
-    y_direction = 0
-
     if direction_values[0] > THRESHOLD:
         y_increase += 1
-        y_direction = y_increase
     elif direction_values[1] > THRESHOLD:
         y_increase -= 1
-        y_direction = -1 * y_increase
     else:
         y_increase = 0
 
     if direction_values[2] > THRESHOLD:
         x_increase -= 1
-        x_direction = -1 * y_increase
     elif direction_values[3] > THRESHOLD:
         x_increase += 1
-        x_direction = x_increase
     else:
         x_increase = 0
 
-
-    pyautogui.move(MOVE_DISTANCE * x_direction, MOVE_DISTANCE * y_direction, 0.05)
+    pyautogui.move(MOVE_DISTANCE * x_increase, MOVE_DISTANCE * y_increase, 0.05)
