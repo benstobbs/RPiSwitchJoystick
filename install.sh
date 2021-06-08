@@ -11,9 +11,7 @@ else
     fi
 fi
 
-sudo pip install Adafruit_ADS1x15
-
-sudo cp smbus.py /usr/local/lib/python2.7/dist-packages/Adafruit_PureIO/smbus.py
+sudo pip install pyautogui
 
 sudo mkdir /etc/RPiSwitchJoystick
 sudo cp config.txt /etc/RPiSwitchJoystick/

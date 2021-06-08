@@ -1,36 +1,35 @@
-import Adafruit_ADS1x15
 import pyautogui
+from gpiozero import Button
+
 
 MOVE_DISTANCE = 5
 SPEED_INCREASE = 1
 
-UP = 0
-DOWN = 2
-LEFT = 3
-RIGHT = 1
-
-THRESHOLD = 800
-
-adc = Adafruit_ADS1x15.ADS1015()
+UP = 7
+DOWN = 8
+LEFT = 9
+RIGHT = 15
 
 x_increase = 0
 y_increase = 0
 
+buttons = [Button(x) for x in [UP, DOWN, LEFT, RIGHT]]
+
 while True:
-    direction_values = [adc.read_adc(i, gain=1, data_rate=128) for i in [UP, DOWN, LEFT, RIGHT]]
+    direction_values = [i.is_pressed for i in buttons]
 
     print(direction_values)
 
-    if direction_values[0] > THRESHOLD:
+    if direction_values[0]:
         y_increase += 1
-    elif direction_values[1] > THRESHOLD:
+    elif direction_values[1]:
         y_increase -= 1
     else:
         y_increase = 0
 
-    if direction_values[2] > THRESHOLD:
+    if direction_values[2]:
         x_increase -= 1
-    elif direction_values[3] > THRESHOLD:
+    elif direction_values[3]:
         x_increase += 1
     else:
         x_increase = 0
