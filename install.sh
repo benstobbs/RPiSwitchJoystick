@@ -22,6 +22,7 @@ sudo chmod +x /etc/RPiSwitchJoystick/service.py
 
 sudo systemctl daemon-reload
 sudo systemctl enable RPiSwitchJoystick.service
+sudo systemctl stop RPiSwitchJoystick.service
 sudo systemctl start RPiSwitchJoystick.service
 
 echo "Done"
