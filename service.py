@@ -5,10 +5,10 @@ from gpiozero import Button
 MOVE_DISTANCE = 5
 SPEED_INCREASE = 1
 
-UP = 7
-DOWN = 8
-LEFT = 9
-RIGHT = 15
+UP = 14
+DOWN = 3
+LEFT = 4
+RIGHT = 2
 
 x_increase = 0
 y_increase = 0
