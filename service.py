@@ -1,7 +1,7 @@
 import pyautogui
 from gpiozero import Button
 
-pyautogui.failsafe = False
+pyautogui.FAILSAFE = False
 
 MOVE_DISTANCE = 5
 SPEED_INCREASE = 1
