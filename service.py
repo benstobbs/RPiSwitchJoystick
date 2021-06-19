@@ -22,16 +22,16 @@ while True:
     print(direction_values)
 
     if direction_values[0]:
-        y_increase += 1
+        y_increase += SPEED_INCREASE
     elif direction_values[1]:
-        y_increase -= 1
+        y_increase -= SPEED_INCREASE
     else:
         y_increase = 0
 
     if direction_values[2]:
-        x_increase -= 1
+        x_increase -= SPEED_INCREASE
     elif direction_values[3]:
-        x_increase += 1
+        x_increase += SPEED_INCREASE
     else:
         x_increase = 0
 
